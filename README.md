@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rodrigo J. García Pinto — Sitio Web Profesional
 
-## Getting Started
+Sitio web del **Productor Asesor de Seguros Rodrigo J. García Pinto** (Matrícula SSN #87740), radicado en Tucumán, Argentina. Construido con Next.js 14 y React 18.
 
-First, run the development server:
+## Stack Tecnológico
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 14 (App Router) + TypeScript
+- **UI:** Bootstrap + FontAwesome + WOW.js (animaciones)
+- **Sliders:** Revolution Slider + OWL Carousel + Embla Carousel
+- **Portafolio:** CubePortfolio + FancyBox
+- **Formularios:** Validación cliente/servidor con Zod
+- **Email:** Resend API
+- **Analytics:** Google Analytics (UA-160318198-1)
+
+## Funcionalidades
+
+- Hero slider animado (Revolution Slider)
+- Formulario de cotización en 3 modalidades: **Vehículos**, **Hogar** y **Accidentes Personales**
+- Formulario de contacto con envío de email
+- Portafolio de productos filtrables (12 tipos de seguros)
+- Carrusel de aseguradoras: SURA, MAPFRE, Zurich, Galeno, Asociart, Federación Patronal, Mercantil Andina
+- Diseño responsive (mobile-first)
+- SEO: Open Graph, Twitter Cards, sitemap.xml, robots.txt
+
+## Estructura del Proyecto
+
+```
+app/
+├── api/
+│   ├── contacto/enviar/route.ts    # Endpoint formulario de contacto
+│   └── cotizacion/enviar/route.ts  # Endpoint formulario de cotización
+├── layout.tsx                       # Layout raíz con scripts y SEO
+└── page.tsx                         # Página principal (landing)
+
+components/
+├── ContactForm.tsx                  # Formulario de contacto
+├── HeroSlider.tsx                   # Slider principal (no-SSR)
+├── Portfolio.tsx                    # Galería de productos (no-SSR)
+├── QuotationForm.tsx                # Formulario de cotización con tabs
+└── ScrollAnimations.tsx             # Inicialización de WOW.js
+
+lib/
+├── constants.ts                     # Datos de contacto y configuración
+├── email.ts                         # Utilidad de envío con Resend
+└── validators.ts                    # Esquemas Zod para validación
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variables de Entorno
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crear un archivo `.env.local` en la raíz del proyecto:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxx
+CONTACT_EMAIL=info@segurosgarciapinto.com.ar
+FROM_EMAIL=noreply@segurosgarciapinto.com.ar
+```
 
-## Learn More
+## Desarrollo Local
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts Disponibles
 
-## Deploy on Vercel
+| Comando         | Descripción                        |
+|-----------------|------------------------------------|
+| `npm run dev`   | Servidor de desarrollo             |
+| `npm run build` | Build de producción                |
+| `npm start`     | Servidor de producción             |
+| `npm run lint`  | Análisis estático de código        |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notas de Arquitectura
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Los componentes que dependen de jQuery (`HeroSlider`, `Portfolio`) se cargan con `dynamic()` y `ssr: false` para evitar errores de hidratación.
+- jQuery se carga con `strategy="beforeInteractive"` para garantizar disponibilidad antes de la hidratación de React.
+- La validación de formularios es doble: cliente (React state) y servidor (Zod).
+
+## Despliegue
+
+Compatible con cualquier hosting que soporte Node.js. Para Vercel:
+
+```bash
+npm run build
+```
+
+Configurar las variables de entorno en el panel de Vercel antes del deploy.
