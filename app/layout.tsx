@@ -5,6 +5,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Rodrigo J. García Pinto | Productor Asesor de Seguros',
   description: 'Rodrigo J. García Pinto | Productor Asesor de Seguros',
+  icons: { icon: '/favicon.ico' },
   keywords: 'seguros garcia pinto,rodrigo garcia pinto, rodrigo jose garcia pinto, garcia pinto, productor de seguros, matricula profesional 87740, seguros, seguro de vida, accidentes personales, art, asesor de seguros, seguro de comercio, seguro de sepelio, seguro de ahorro, seguro de retiro, seguro de autos, seguro integral de consorcio, tucuman, argentina',
   authors: [{ name: 'Developia' }, { name: 'Seguros García Pinto' }],
   openGraph: {
@@ -28,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/img/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="image_src" type="image/jpeg" href="/img/banner.jpg" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/all.min.css" />
