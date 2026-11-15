@@ -5,7 +5,14 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Rodrigo J. García Pinto | Productor Asesor de Seguros',
   description: 'Rodrigo J. García Pinto | Productor Asesor de Seguros',
-  icons: { icon: '/favicon.ico' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   keywords: 'seguros garcia pinto,rodrigo garcia pinto, rodrigo jose garcia pinto, garcia pinto, productor de seguros, matricula profesional 87740, seguros, seguro de vida, accidentes personales, art, asesor de seguros, seguro de comercio, seguro de sepelio, seguro de ahorro, seguro de retiro, seguro de autos, seguro integral de consorcio, tucuman, argentina',
   authors: [{ name: 'Developia' }, { name: 'Seguros García Pinto' }],
   openGraph: {
@@ -30,6 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="image_src" type="image/jpeg" href="/img/banner.jpg" />
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/all.min.css" />
