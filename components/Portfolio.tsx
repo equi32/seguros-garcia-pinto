@@ -69,7 +69,7 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="col-lg-12">
-            <div id="grid-mosaic" className="cbp cbp-l-grid-mosaic-flat">
+            <div id="grid-mosaic" className="cbp cbp-l-grid-mosaic">
               {[
                 { img: 'integral-consorcio', label: 'Integral de Consorcio', cats: 'bienes graphics' },
                 { img: 'art', label: 'ART', cats: 'trabajo graphics design' },
@@ -88,9 +88,15 @@ export default function Portfolio() {
                   <img src={`/img/servicios/${img}.jpg`} alt="" />
                   <div className="gallery-hvr whitecolor">
                     <div className="center-box">
-                      <a href={`/img/servicios/${img}-banner.jpg`} className="opens" data-fancybox="gallery" title="Ver más">
-                        <i className="fa fa-search-plus"></i>
-                      </a>
+                      {img === 'caucion' ? (
+                        <a href="#cauciones" className="opens pagescroll" title="Ver más">
+                          <i className="fa fa-search-plus"></i>
+                        </a>
+                      ) : (
+                        <a href={`/img/servicios/${img}-banner.jpg`} className="opens" data-fancybox="gallery" title="Ver más">
+                          <i className="fa fa-search-plus"></i>
+                        </a>
+                      )}
                       <h4 className="w-100">{label}</h4>
                     </div>
                   </div>
