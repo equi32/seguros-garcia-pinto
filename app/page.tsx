@@ -1,8 +1,11 @@
 import dynamic from 'next/dynamic';
-import { SITE } from '@/lib/constants';
+import { SITE, buildWhatsAppUrl } from '@/lib/constants';
 import ContactForm from '@/components/ContactForm';
 import QuotationForm from '@/components/QuotationForm';
 import ScrollAnimations from '@/components/ScrollAnimations';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import CaucionSection from '@/components/CaucionSection';
+import FAQSection from '@/components/FAQSection';
 
 // SSR disabled for jQuery-dependent components to avoid hydration mismatches
 const HeroSlider = dynamic(() => import('@/components/HeroSlider'), { ssr: false });
@@ -32,6 +35,8 @@ export default function Home() {
                 <li className="nav-item"><a className="nav-link pagescroll scrollupto" href="#about">Que te ofrecemos</a></li>
                 <li className="nav-item"><a className="nav-link pagescroll" href="#portfolio">Productos</a></li>
                 <li className="nav-item"><a className="nav-link pagescroll" href="#blog">Servicios</a></li>
+                <li className="nav-item"><a className="nav-link pagescroll" href="#cauciones">Cauciones</a></li>
+                <li className="nav-item"><a className="nav-link pagescroll" href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
                 <li className="nav-item"><a className="nav-link pagescroll" href="#contact">Contacto</a></li>
               </ul>
             </div>
@@ -51,6 +56,8 @@ export default function Home() {
                 <li className="nav-item"><a className="nav-link pagescroll scrollupto" href="#about">Qué te ofrecemos</a></li>
                 <li className="nav-item"><a className="nav-link pagescroll" href="#portfolio">Productos</a></li>
                 <li className="nav-item"><a className="nav-link pagescroll" href="#blog">Servicios</a></li>
+                <li className="nav-item"><a className="nav-link pagescroll" href="#cauciones">Cauciones</a></li>
+                <li className="nav-item"><a className="nav-link pagescroll" href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
                 <li className="nav-item"><a className="nav-link pagescroll" href="#contact">Contacto</a></li>
               </ul>
             </nav>
@@ -87,8 +94,10 @@ export default function Home() {
               <div className="item">
                 <div className="service-box">
                   <span className="bottom25"><i className="fa fa-hand-holding-usd"></i></span>
-                  <h4 className="bottom10">El Mejor Precio</h4>
-                  <p>Mejoramos el presupuesto que tengas y además mejoramos la cobertura</p>
+                  <a href={buildWhatsAppUrl('Hola Rodrigo, quiero que revisen mi póliza actual')} target="_blank" rel="noopener noreferrer">
+                    <h4 className="bottom10">Revisamos tu póliza actual sin costo</h4>
+                  </a>
+                  <p>Analizamos tu cobertura actual, te explicamos qué cubre y qué no, y te mostramos si hay una opción mejor.</p>
                 </div>
               </div>
               <div className="item">
@@ -224,13 +233,16 @@ export default function Home() {
             <div className="col-md-12 col-sm-12">
               <div id="partners-slider" className="owl-carousel">
                 {[
-                  { src: '/img/empresas/logo-sura.jpg', alt: 'SURA' },
+                  { src: '/img/empresas/logo-san-cristobal.jpg', alt: 'San Cristobal' },
+                  { src: '/img/empresas/logo-sancor.jpg', alt: 'Sancor Seguros' },
                   { src: '/img/empresas/logo-federacion-patronal.jpg', alt: 'Federación Patronal' },
                   { src: '/img/empresas/logo-galeno.jpg', alt: 'Galeno' },
                   { src: '/img/empresas/logo-mapfre.jpg', alt: 'MAPFRE' },
                   { src: '/img/empresas/logo-zurich.jpg', alt: 'Zurich' },
                   { src: '/img/empresas/logo-asociart.jpg', alt: 'Asociart' },
                   { src: '/img/empresas/logo-mercantil-andina.jpg', alt: 'Mercantil Andina' },
+                  { src: '/img/empresas/logo-cosena.jpg', alt: 'Cosena' },
+                  { src: '/img/empresas/logo-woranz.jpg', alt: 'Woranz' },
                 ].map(({ src, alt }) => (
                   <div key={alt} className="item">
                     <div className="logo-item"><img alt={alt} src={src} /></div>
@@ -292,6 +304,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Cauciones */}
+      <CaucionSection />
+
+      {/* Preguntas Frecuentes */}
+      <FAQSection />
+
       {/* Contact */}
       <section id="contact" className="position-relative padding_bottom_half">
         <div className="container whitebox padding_bottom_half">
@@ -319,7 +337,7 @@ export default function Home() {
                   </div>
                   <ul className="social-icons no-border mb-4 mb-md-0 wow fadeInUp" data-wow-delay="300ms">
                     <li><a href={SITE.facebook} className="facebook" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                    <li><a className="linkedin" style={{cursor:'default'}}><i className="fab fa-linkedin-in"></i></a></li>
+                    <li><a href={SITE.linkedin} className="linkedin" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a></li>
                     <li><a href={SITE.instagram} className="insta" target="_blank"><i className="fab fa-instagram"></i></a></li>
                     <li><a href={SITE.whatsapp} className="whatsapp" target="_blank"><i className="fab fa-whatsapp"></i></a></li>
                     <li><a href={SITE.email}><i className="far fa-envelope"></i></a></li>
@@ -358,6 +376,14 @@ export default function Home() {
                   <li><a href={SITE.linkedin} className="linkedin" target="_blank"><i className="fab fa-linkedin-in"></i></a></li>
                   <li><a href={SITE.instagram} className="insta" target="_blank"><i className="fab fa-instagram"></i></a></li>
                 </ul>
+                <a
+                  href={SITE.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whitecolor d-block top10 footer-instagram-handle"
+                >
+                  <i className="fab fa-instagram"></i> @segurosgarciapinto
+                </a>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-6">
@@ -368,6 +394,8 @@ export default function Home() {
                   <li><a href="#about" className="pagescroll scrollupto">Qué te ofrecemos</a></li>
                   <li><a href="#portfolio" className="pagescroll">Productos</a></li>
                   <li><a href="#blog" className="pagescroll">Servicios</a></li>
+                  <li><a href="#cauciones" className="pagescroll">Cauciones</a></li>
+                  <li><a href="#preguntas-frecuentes" className="pagescroll">Preguntas frecuentes</a></li>
                   <li><a href="#contact" className="pagescroll">Contacto</a></li>
                 </ul>
               </div>
@@ -392,6 +420,7 @@ export default function Home() {
       </footer>
 
       <ScrollAnimations />
+      <FloatingWhatsApp />
     </>
   );
 }
