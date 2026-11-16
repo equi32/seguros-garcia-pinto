@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { SITE, buildWhatsAppUrl } from '@/lib/constants';
 import ContactForm from '@/components/ContactForm';
 import QuotationForm from '@/components/QuotationForm';
@@ -6,10 +5,8 @@ import ScrollAnimations from '@/components/ScrollAnimations';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import CaucionSection from '@/components/CaucionSection';
 import FAQSection from '@/components/FAQSection';
-
-// SSR disabled for jQuery-dependent components to avoid hydration mismatches
-const HeroSlider = dynamic(() => import('@/components/HeroSlider'), { ssr: false });
-const Portfolio = dynamic(() => import('@/components/Portfolio'), { ssr: false });
+import HeroSlider from '@/components/DynamicHeroSlider';
+import Portfolio from '@/components/DynamicPortfolio';
 
 export default function Home() {
   return (
