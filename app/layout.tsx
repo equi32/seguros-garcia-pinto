@@ -1,10 +1,39 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { SITE } from '@/lib/constants';
 import './globals.css';
 
+const SITE_URL = 'https://www.segurosgarciapinto.com.ar';
+const SITE_DESCRIPTION =
+  'Rodrigo García Pinto, Productor Asesor de Seguros matriculado (M.P. 87740) en Tucumán, Argentina. Cotizá seguros de auto, moto, hogar, vida, ART, comercio, consorcio, caución para alquileres y más, con asesoramiento personalizado y atención directa.';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'InsuranceAgency',
+  name: 'García Pinto | Asesor de Seguros',
+  alternateName: SITE.name,
+  description: SITE_DESCRIPTION,
+  url: SITE_URL,
+  image: `${SITE_URL}/img/banner.jpg`,
+  logo: `${SITE_URL}/img/logo.png`,
+  telephone: SITE.celular,
+  email: SITE.contact,
+  areaServed: {
+    '@type': 'State',
+    name: 'Tucumán, Argentina',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'Tucumán',
+    addressCountry: 'AR',
+  },
+  sameAs: [SITE.facebook, SITE.instagram, SITE.linkedin],
+};
+
 export const metadata: Metadata = {
-  title: 'Rodrigo J. García Pinto | Productor Asesor de Seguros',
-  description: 'Rodrigo J. García Pinto | Productor Asesor de Seguros',
+  metadataBase: new URL(SITE_URL),
+  title: 'GARCIA PINTO | Asesor de Seguros',
+  description: SITE_DESCRIPTION,
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -13,20 +42,46 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-touch-icon.png',
   },
-  keywords: 'seguros garcia pinto,rodrigo garcia pinto, rodrigo jose garcia pinto, garcia pinto, productor de seguros, matricula profesional 87740, seguros, seguro de vida, accidentes personales, art, asesor de seguros, seguro de comercio, seguro de sepelio, seguro de ahorro, seguro de retiro, seguro de autos, seguro integral de consorcio, tucuman, argentina',
+  keywords: [
+    'garcia pinto', 'seguros garcia pinto', 'rodrigo garcia pinto', 'rodrigo jose garcia pinto',
+    'productor asesor de seguros', 'matricula profesional 87740', 'asesor de seguros tucuman',
+    'seguro de auto', 'seguro de moto', 'seguro de hogar', 'seguro de vida', 'seguro de retiro',
+    'seguro de ahorro', 'accidentes personales', 'art', 'seguro de comercio', 'seguro de sepelio',
+    'seguro integral de consorcio', 'seguro para maquinas agricolas', 'seguro por mala praxis',
+    'seguro de caucion', 'caucion para alquileres', 'cotizador de caucion', 'garantia de alquiler',
+    'tucuman', 'argentina',
+  ].join(', '),
   authors: [{ name: 'Developia' }, { name: 'Seguros García Pinto' }],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
   openGraph: {
-    title: 'Seguros García Pinto | Tucumán - Argentina',
-    description: 'Sitio Web Seguros García Pinto | Tucumán - Argentina',
-    images: ['/img/banner.jpg'],
+    type: 'website',
+    locale: 'es_AR',
+    url: SITE_URL,
+    siteName: 'García Pinto | Asesor de Seguros',
+    title: 'GARCIA PINTO | Asesor de Seguros',
+    description: SITE_DESCRIPTION,
+    images: [{ url: '/img/banner.jpg', width: 1200, height: 628, alt: 'Seguros García Pinto' }],
   },
   twitter: {
-    title: 'Seguros García Pinto | Tucumán - Argentina',
+    card: 'summary_large_image',
+    title: 'GARCIA PINTO | Asesor de Seguros',
+    description: SITE_DESCRIPTION,
     images: ['/img/banner.jpg'],
   },
   other: {
     'google-site-verification': 'Ihn6nxqRh-KIPWuTT1AZP-owufJx-GjvWijORX2--As',
-    'revisit-after': '1 days',
+    'revisit-after': '7 days',
     'rating': 'General',
     'distribution': 'global',
   },
@@ -50,6 +105,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="/css/revolution/navigation.css" />
         <link rel="stylesheet" href="/css/revolution/settings.css" />
         <link rel="stylesheet" href="/css/style.css" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
         {/* jQuery must be available before React hydrates so RevSlider/CubePortfolio can attach */}
         <Script src="/js/jquery-3.4.1.min.js" strategy="beforeInteractive" />

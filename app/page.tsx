@@ -74,6 +74,7 @@ export default function Home() {
       </header>
 
       {/* Hero Slider */}
+      <h1 className="sr-only">García Pinto | Productor Asesor de Seguros en Tucumán, Argentina</h1>
       <HeroSlider />
 
       {/* Services Boxes */}
