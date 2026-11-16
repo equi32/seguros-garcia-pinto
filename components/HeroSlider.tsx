@@ -64,7 +64,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1000"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-xlight whitecolor text-center">Rodrigo J. García Pinto</h1>
+                <h2 className="text-capitalize font-xlight whitecolor text-center">Rodrigo J. García Pinto</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -73,7 +73,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1000"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-bold whitecolor text-center">Productor | Asesor</h1>
+                <h2 className="text-capitalize font-bold whitecolor text-center">Productor | Asesor</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -82,7 +82,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1500"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-xlight whitecolor text-center">de Seguros</h1>
+                <h2 className="text-capitalize font-xlight whitecolor text-center">de Seguros</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -105,7 +105,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1000"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-xlight whitecolor text-center">Conocé todas</h1>
+                <h2 className="text-capitalize font-xlight whitecolor text-center">Conocé todas</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -114,7 +114,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1000"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-bold whitecolor text-center">las ofertas</h1>
+                <h2 className="text-capitalize font-bold whitecolor text-center">las ofertas</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -123,7 +123,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1500"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-xlight whitecolor text-center">que tenemos</h1>
+                <h2 className="text-capitalize font-xlight whitecolor text-center">que tenemos</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -146,7 +146,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1000"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-xlight whitecolor text-center">Obtené tu seguro</h1>
+                <h2 className="text-capitalize font-xlight whitecolor text-center">Obtené tu seguro</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -155,7 +155,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1000"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-bold whitecolor text-center">de forma fácil</h1>
+                <h2 className="text-capitalize font-bold whitecolor text-center">de forma fácil</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -164,7 +164,7 @@ export default function HeroSlider() {
                 data-textalign="['center','center','center','center']"
                 data-responsive_offset="on" data-start="1500"
                 data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                <h1 className="text-capitalize font-xlight whitecolor text-center">rápida y directa</h1>
+                <h2 className="text-capitalize font-xlight whitecolor text-center">rápida y directa</h2>
               </div>
               <div className="tp-caption tp-resizeme"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
