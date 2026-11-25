@@ -7066,6 +7066,40 @@ Cauciones — calculadora
     cursor: not-allowed;
 }
 
+.caucion-especial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    border: 1px dashed #224775;
+    border-radius: 14px;
+    color: #224775;
+    font-weight: 600;
+}
+
+.caucion-especial-btn {
+    background: #224775;
+    color: #fff;
+    border-radius: 30px;
+    padding: 9px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.caucion-especial-btn {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.caucion-especial-btn:hover,
+.caucion-especial-btn:focus {
+    background: #DFE282;
+    color: #224775;
+}
+
 .caucion-resultado-productor {
     color: #224775;
     font-size: 12.5px;

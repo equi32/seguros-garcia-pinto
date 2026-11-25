@@ -28,7 +28,7 @@ export const COBERTURA_EXPENSAS = 2_500_000;
 export const COBERTURA_IMPUESTOS_SERVICIOS = 1_500_000;
 
 export const CUOTAS_SIN_DEPOSITO = [9] as const;
-export const CUOTAS_CON_DEPOSITO = [3, 6, 12] as const;
+export const CUOTAS_CON_DEPOSITO = [9] as const;
 
 export interface ResultadoCaucion {
   conDeposito: boolean;

@@ -44,7 +44,7 @@ export default function CaucionCalculator() {
 
   function handleToggleDeposito(checked: boolean) {
     setTieneDeposito(checked);
-    const nuevasCuotas: FormaPago[] = checked ? [3, 6, 12] : [9];
+    const nuevasCuotas: FormaPago[] = [9];
     if (formaPago !== 'transferencia' && !nuevasCuotas.includes(formaPago)) {
       setFormaPago('transferencia');
     }
@@ -196,6 +196,20 @@ export default function CaucionCalculator() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="caucion-especial">
+        <span>Para cotización especial, contáctanos</span>
+        <a
+          href={buildWhatsAppUrl(
+            'Hola García Pinto, vi el simulador de garantía de alquiler en su web y necesito una cotización especial.'
+          )}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="caucion-especial-btn"
+        >
+          Escribinos por WhatsApp
+        </a>
       </div>
 
       <div className="caucion-cobertura">
